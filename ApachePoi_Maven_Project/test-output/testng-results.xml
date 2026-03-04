@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-01-30T15:59:34 IST" name="Default suite" finished-at="2026-01-30T15:59:35 IST" duration-ms="834">
+    <groups>
+    </groups>
+    <test started-at="2026-01-30T15:59:34 IST" name="Default test" finished-at="2026-01-30T15:59:35 IST" duration-ms="834">
+      <class name="Poi_Basics.Working_With_Dataprovider">
+        <test-method signature="print(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Poi_Basics.Working_With_Dataprovider@6973b51b]" started-at="2026-01-30T15:59:35 IST" name="print" data-provider="excel" finished-at="2026-01-30T15:59:35 IST" duration-ms="14" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Legolas]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[GreenLeaf]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Legolas_GreenLeaf1946@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Legolaslego@12_43]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Legolaslego@12_43]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- print -->
+        <test-method signature="print(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Poi_Basics.Working_With_Dataprovider@6973b51b]" started-at="2026-01-30T15:59:35 IST" name="print" data-provider="excel" finished-at="2026-01-30T15:59:35 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Jon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Snow]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[jon.snow@testmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Jon@12345]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Jon@12345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- print -->
+        <test-method signature="print(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Poi_Basics.Working_With_Dataprovider@6973b51b]" started-at="2026-01-30T15:59:35 IST" name="print" data-provider="excel" finished-at="2026-01-30T15:59:35 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Cersie]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Lanister]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cersie.lanister@testmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Cer@12345]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cer@12345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- print -->
+        <test-method signature="print(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Poi_Basics.Working_With_Dataprovider@6973b51b]" started-at="2026-01-30T15:59:35 IST" name="print" data-provider="excel" finished-at="2026-01-30T15:59:35 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Denerys ]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Targerian]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[denerys.targerian@testmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Den@12345]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Den@12345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- print -->
+      </class> <!-- Poi_Basics.Working_With_Dataprovider -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
