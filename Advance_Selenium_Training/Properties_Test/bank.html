@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Transfer Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 50%; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background-color: #f4f4f4; }
+        input, select { padding: 5px; margin-right: 10px; }
+        button { padding: 5px 10px; }
+        .message { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Bank Accounts</h1>
+    <table id="accountsTable">
+        <thead>
+            <tr>
+                <th>Account</th>
+                <th>Balance ($)</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Transfer Money</h2>
+    <form id="transferForm">
+        From:
+        <select id="fromAccount"></select>
+        To:
+        <select id="toAccount"></select>
+        Amount: <input type="number" id="amount" min="1" required>
+        <button type="submit">Transfer</button>
+    </form>
+
+    <div class="message" id="message"></div>
+
+    <script>
+        const accountsTable = document.getElementById('accountsTable').getElementsByTagName('tbody')[0];
+        const fromSelect = document.getElementById('fromAccount');
+        const toSelect = document.getElementById('toAccount');
+        const messageDiv = document.getElementById('message');
+
+        async function loadAccounts() {
+            const res = await fetch('http://localhost:8084/accounts');
+            const accounts = await res.json();
+
+            // Clear table & dropdowns
+            accountsTable.innerHTML = '';
+            fromSelect.innerHTML = '';
+            toSelect.innerHTML = '';
+
+            for (const account in accounts) {
+                // Table row
+                const row = accountsTable.insertRow();
+                row.insertCell(0).innerText = account;
+                row.insertCell(1).innerText = accounts[account].toFixed(2);
+
+                // Dropdown options
+                const optionFrom = document.createElement('option');
+                optionFrom.value = account;
+                optionFrom.text = account;
+                fromSelect.add(optionFrom);
+
+                const optionTo = document.createElement('option');
+                optionTo.value = account;
+                optionTo.text = account;
+                toSelect.add(optionTo);
+            }
+        }
+
+        document.getElementById('transferForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const from = fromSelect.value;
+            const to = toSelect.value;
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            if (from === to) {
+                messageDiv.innerText = "Cannot transfer to the same account!";
+                return;
+            }
+
+            const res = await fetch('http://localhost:8084/transfer', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ from, to, amount })
+            });
+
+            const data = await res.json();
+            if (res.ok) {
+                messageDiv.style.color = 'green';
+                messageDiv.innerText = data.message;
+            } else {
+                messageDiv.style.color = 'red';
+                messageDiv.innerText = data.error;
+            }
+
+            loadAccounts();
+        });
+
+        loadAccounts();
+    </script>
+</body>
+</html>
